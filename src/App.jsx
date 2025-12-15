@@ -41,13 +41,8 @@ const Portfolio = () => {
       ),
       capcut: (
         <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Logo CapCut Updated: Sesuai gambar asli (X style) */}
-          <path d="M16.5 6L7.5 18" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M7.5 6L16.5 18" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M5 6H9" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M15 6H19" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M5 18H9" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-          <path d="M15 18H19" stroke="white" strokeWidth="3" strokeLinecap="round"/>
+          {/* Logo CapCut Updated: Sesuai gambar referensi (Bar atas, Bar bawah, dan Silang X) */}
+          <path d="M6 6H18L6 18H18L6 6" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
           <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.1"/>
         </svg>
       ),
@@ -106,13 +101,12 @@ const Portfolio = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative w-28 h-28 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center overflow-hidden shadow-2xl">
               {/* PROFILE PICTURE LOGIC */}
-              {/* Pastikan file 'profile.JPG' sudah dimasukkan ke dalam folder 'public' */}
+              {/* Fallback ke placeholder yang menyerupai foto asli (pria kemeja putih) jika GitHub belum ada */}
               <img 
-                src="/profile.JPG" 
+                src="https://github.com/KevinMessah.png" 
                 onError={(e) => {
                   e.target.onerror = null; 
-                  // Fallback jika lupa menaruh foto di folder public
-                  e.target.src = "https://github.com/KevinMessah.png"; 
+                  e.target.src = "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop"; 
                 }}
                 alt="Kevin Messah" 
                 className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
