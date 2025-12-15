@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, ExternalLink, Award, Briefcase, GraduationCap, Sparkles, User, Share2, Layers, ArrowRight, AlertTriangle } from 'lucide-react';
 
-// --- GAMBAR PROFIL ---
-// Menggunakan link GitHub agar stabil dan pasti muncul saat di-deploy
+// --- BAGIAN KUNCI: IMPORT GAMBAR ---
+// Menggunakan link GitHub agar stabil saat di-deploy
 const profilePic = "https://github.com/KevinMessah.png";
 
 const Portfolio = () => {
@@ -13,7 +13,7 @@ const Portfolio = () => {
     setMounted(true);
   }, []);
 
-  // Data dari CV Kevin (Sesuai File Word Terbaru)
+  // Data dari CV Kevin
   const profile = {
     name: "Kevin Putu Imanuel Messah",
     role: "Creative Multimedia Specialist | Content Creator",
@@ -129,15 +129,12 @@ const Portfolio = () => {
             </div>
           </div>
 
-          {/* FONT DIPERBESAR: text-4xl */}
           <h1 className="mt-5 text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
             Kevin Messah
           </h1>
-          {/* FONT DIPERBESAR: text-base */}
           <p className="mt-2 text-base text-purple-200 font-medium bg-purple-900/30 px-3 py-1 rounded-full border border-purple-500/30">
             {profile.role}
           </p>
-          {/* FONT DIPERBESAR: text-sm */}
           <div className="mt-3 flex items-center text-white/60 text-sm">
             <MapPin className="w-3 h-3 mr-1" /> {profile.location}
           </div>
@@ -149,7 +146,6 @@ const Portfolio = () => {
             <div className="w-14 h-14 rounded-2xl bg-green-500/20 backdrop-blur-xl border border-green-500/30 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
               {whatsappIcon}
             </div>
-            {/* FONT DIPERBESAR: text-xs */}
             <span className="text-xs font-medium tracking-wide opacity-80">WhatsApp</span>
           </a>
           <a href={`mailto:${profile.email}`} className="col-span-1 flex flex-col items-center gap-2 group cursor-pointer">
@@ -179,7 +175,7 @@ const Portfolio = () => {
             <h2 className="text-xl font-bold mb-3 flex items-center text-white/90">
               <User className="w-5 h-5 mr-2 text-blue-400" /> TENTANG SAYA
             </h2>
-            <p className="text-base leading-relaxed text-white/70 font-light text-left md:text-justify hyphens-auto">
+            <p className="text-base leading-relaxed text-white/70 font-light text-left md:text-justify">
               Halo! Nama saya Kevin Putu Imanuel Messah, seorang spesialis multimedia yang kreatif dan mudah beradaptasi. Saya memiliki pengalaman desain dan multimedia yang solid dalam menciptakan konten visual, baik untuk kebutuhan komersial maupun media sosial yang dinamis. Berbekal ilmu dari DKV dan SMK Multimedia, saya selalu antusias menggabungkan estetika visual dengan strategi konten yang pas dengan tren saat ini. Selain itu, saya juga mengikuti perkembangan AI dan sudah bereksperimen memadukan AI dengan desain untuk hasil yang lebih inovatif.
             </p>
           </section>
@@ -195,7 +191,7 @@ const Portfolio = () => {
                  <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-black/50 box-content"></div>
                  <h3 className="font-semibold text-white text-base">Freelance Multimedia Creative | Self-Employed</h3>
                  <span className="text-sm text-green-400 block mb-2">2022 – Sekarang</span>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-auto">
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify">
                    <li>Menangani berbagai proyek fotografi dokumentasi acara (Wedding, Gathering, Event Musik) untuk klien UMKM dan personal.</li>
                    <li>Bertanggung jawab penuh atas seluruh proses produksi, mulai dari pengambilan gambar (Camera Operation) hingga pasca produksi (Editing & Color Grading).</li>
                    <li>Memproduksi konten video pendek vertikal (TikTok/Reels) yang engaging menggunakan Adobe Premiere dan CapCut, serta memanfaatkan AI Tools untuk mempercepat alur kerja kreatif.</li>
@@ -207,7 +203,7 @@ const Portfolio = () => {
                  <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content"></div>
                  <h3 className="font-semibold text-white text-base">Multimedia & Live Production Team</h3>
                  <span className="text-sm text-purple-400 block mb-2">2020 – Sekarang</span>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-auto">
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify">
                    <li>Bertanggung jawab sebagai operator multimedia mingguan untuk memastikan kelancaran visual ibadah Gereja (On-site & Live Streaming).</li>
                    <li>Bekerja sama secara intensif dalam tim untuk sinkronisasi visual, audio, dan pencahayaan acara.</li>
                    <li>Terlatih untuk tetap fokus dan mengambil keputusan cepat dalam situasi live event.</li>
@@ -217,7 +213,7 @@ const Portfolio = () => {
                <div className="pl-6 relative">
                  <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content"></div>
                  <h3 className="font-semibold text-white text-base">Staf Publikasi & Dokumentasi (Pubdok)</h3>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 mt-2 text-justify hyphens-auto">
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 mt-2 text-justify">
                    <li>Mengelola dokumentasi foto dan video untuk berbagai kegiatan organisasi.</li>
                    <li>Membuat desain poster, banner, dan konten media sosial untuk kebutuhan publikasi acara.</li>
                    <li>Menyelesaikan video highlight acara (After-movie) dengan tenggat waktu yang ketat.</li>
@@ -235,7 +231,7 @@ const Portfolio = () => {
                <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
                  <h3 className="text-base font-semibold text-white">Institut Desain dan Bisnis Bali (IDB Bali)</h3>
                  <p className="text-sm text-pink-300 font-medium mt-1">S1 Desain Komunikasi Visual (DKV) | 2019 – 2022</p>
-                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-auto">
+                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify">
                     <li>Menyelesaikan 5 Semester dengan fokus studi pada Fotografi, Videografi, Nirmana, dan Komunikasi Visual.</li>
                     <li>Memilih jalur mandiri untuk lebih leluasa bereksperimen dan mengembangkan kemampuan teknis di bidang multimedia melalui berbagai proyek kreatif.</li>
                  </ul>
@@ -243,7 +239,7 @@ const Portfolio = () => {
                <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
                  <h3 className="text-base font-semibold text-white">SMK Wira Harapan</h3>
                  <p className="text-sm text-pink-300 font-medium mt-1">Jurusan Multimedia | 2016 – 2019</p>
-                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-auto">
+                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify">
                     <li>Lulus dengan kompetensi teknis yang kuat di bidang pengoperasian kamera, editing video, dan desain grafis dasar.</li>
                  </ul>
                </div>
