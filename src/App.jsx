@@ -12,9 +12,24 @@ const Portfolio = () => {
     setMounted(true);
   }, []);
 
-  // --- FUNGSI DOWNLOAD PDF ---
+  // --- FUNGSI DOWNLOAD PDF DENGAN PANDUAN ---
   const handleDownloadPDF = () => {
+    // 1. Simpan judul halaman asli
+    const originalTitle = document.title;
+    
+    // 2. Ubah judul halaman (ini akan jadi nama file PDF otomatis)
+    document.title = "CV_Kevin_Putu_Imanuel_Messah";
+
+    // 3. Tampilkan pesan petunjuk agar user tidak bingung
+    alert("CARA MENYIMPAN SEBAGAI FILE PDF:\n\n1. Jendela Print akan terbuka.\n2. Lihat bagian 'Destination' (Tujuan).\n3. UBAH dari nama Printer menjadi 'Save as PDF' (Simpan sebagai PDF).\n4. Klik tombol 'Save' di bawah.");
+
+    // 4. Buka jendela print
     window.print();
+
+    // 5. Kembalikan judul asli setelah selesai (opsional, timeout agar tidak langsung berubah)
+    setTimeout(() => {
+      document.title = originalTitle;
+    }, 1000);
   };
 
   // Data dari CV Kevin
@@ -140,7 +155,6 @@ const Portfolio = () => {
           </div>
           
           {/* KONTAK INFO KHUSUS PRINT */}
-          {/* Ini hanya muncul saat diprint, menggantikan tombol interaktif */}
           <div className="hidden print-block mt-4 text-sm text-black border-t border-b border-gray-300 py-2 w-full">
             <p className="font-semibold">Contact & Portfolio:</p>
             <p>WA: {profile.phone} | Email: {profile.email}</p>
@@ -344,7 +358,7 @@ const Portfolio = () => {
         </div>
       </div>
       
-      {/* GLOBAL CSS: ANIMASI & PRINT */}
+      {/* GLOBAL CSS: ANIMASI & PRINT KHUSUS */}
       <style>{`
         @keyframes blob {
           0% { transform: translate(0px, 0px) scale(1); }
