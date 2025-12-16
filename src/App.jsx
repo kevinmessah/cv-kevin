@@ -12,7 +12,7 @@ const Portfolio = () => {
     setMounted(true);
   }, []);
 
-  // --- FUNGSI DOWNLOAD PDF DENGAN PANDUAN ---
+  // --- FUNGSI DOWNLOAD PDF ---
   const handleDownloadPDF = () => {
     // 1. Simpan judul halaman asli
     const originalTitle = document.title;
@@ -20,13 +20,10 @@ const Portfolio = () => {
     // 2. Ubah judul halaman (ini akan jadi nama file PDF otomatis)
     document.title = "CV_Kevin_Putu_Imanuel_Messah";
 
-    // 3. Tampilkan pesan petunjuk agar user tidak bingung
-    alert("CARA MENYIMPAN SEBAGAI FILE PDF:\n\n1. Jendela Print akan terbuka.\n2. Lihat bagian 'Destination' (Tujuan).\n3. UBAH dari nama Printer menjadi 'Save as PDF' (Simpan sebagai PDF).\n4. Klik tombol 'Save' di bawah.");
-
-    // 4. Buka jendela print
+    // 3. Buka jendela print (Ini satu-satunya cara native browser untuk save PDF)
     window.print();
 
-    // 5. Kembalikan judul asli setelah selesai (opsional, timeout agar tidak langsung berubah)
+    // 4. Kembalikan judul asli
     setTimeout(() => {
       document.title = originalTitle;
     }, 1000);
@@ -44,7 +41,6 @@ const Portfolio = () => {
 
   // Komponen Logo Software (SVG)
   const SoftLogo = ({ type }) => {
-    // Kita gunakan class 'svg-icon' agar bisa dikontrol warnanya saat print
     const logos = {
       premiere: (
         <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,10 +62,10 @@ const Portfolio = () => {
       ),
       capcut: (
         <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 6H17L12 11L7 6Z" fill="white" className="icon-path" />
-          <path d="M7 18H17L12 13L7 18Z" fill="white" className="icon-path" />
-          <path d="M6 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6" className="icon-stroke"/>
-          <path d="M18 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6" className="icon-stroke"/>
+          {/* Logo CapCut Akurat */}
+          <path d="M12 5V19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon-stroke"/>
+          <path d="M7 8L12 13L17 8" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon-stroke"/>
+          <path d="M7 16L12 11L17 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon-stroke"/>
           <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.1" className="icon-bg"/>
         </svg>
       ),
@@ -192,12 +188,13 @@ const Portfolio = () => {
              <span className="text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wide text-center leading-3 pt-1">WHAT I CREATE</span>
           </a>
 
-          {/* TOMBOL DOWNLOAD PDF */}
-          <div onClick={handleDownloadPDF} className="flex flex-col items-center gap-2 group cursor-pointer w-20">
+          {/* TOMBOL DOWNLOAD PDF (DIBUAT LEBIH JELAS) */}
+          <div onClick={handleDownloadPDF} className="flex flex-col items-center gap-2 group cursor-pointer w-20" title="Simpan sebagai file PDF">
             <div className="w-14 h-14 rounded-2xl bg-orange-500/20 backdrop-blur-xl border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
               <Download className="w-6 h-6" />
             </div>
-            <span className="text-xs font-medium tracking-wide opacity-80 text-center">Save PDF</span>
+            {/* LABEL DIUBAH AGAR TIDAK BINGUNG */}
+            <span className="text-xs font-medium tracking-wide opacity-80 text-center leading-tight">Download CV</span>
           </div>
         </div>
 
