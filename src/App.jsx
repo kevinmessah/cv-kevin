@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Mail, MapPin, ExternalLink, Award, Briefcase, GraduationCap, Sparkles, User, Share2, Layers, ArrowRight, AlertTriangle, Download } from 'lucide-react';
 
 // --- GAMBAR PROFIL (LINK GITHUB) ---
-// Menggunakan link GitHub agar stabil saat di-deploy
 const profilePic = "https://github.com/KevinMessah.png";
 
 const Portfolio = () => {
@@ -30,44 +29,44 @@ const Portfolio = () => {
 
   // Komponen Logo Software (SVG)
   const SoftLogo = ({ type }) => {
+    // Kita gunakan class 'svg-icon' agar bisa dikontrol warnanya saat print
     const logos = {
       premiere: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="24" height="24" rx="4" fill="#9999FF" fillOpacity="0.2"/>
-          <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#D8B4FF" fontSize="10" fontWeight="bold">Pr</text>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="24" height="24" rx="4" fill="#9999FF" fillOpacity="0.2" className="icon-bg"/>
+          <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#D8B4FF" fontSize="10" fontWeight="bold" className="icon-text">Pr</text>
         </svg>
       ),
       photoshop: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <rect width="24" height="24" rx="4" fill="#31A8FF" fillOpacity="0.2"/>
-           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#31A8FF" fontSize="10" fontWeight="bold">Ps</text>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <rect width="24" height="24" rx="4" fill="#31A8FF" fillOpacity="0.2" className="icon-bg"/>
+           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#31A8FF" fontSize="10" fontWeight="bold" className="icon-text">Ps</text>
         </svg>
       ),
       audition: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <rect width="24" height="24" rx="4" fill="#00E4BB" fillOpacity="0.2"/>
-           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#00E4BB" fontSize="10" fontWeight="bold">Au</text>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <rect width="24" height="24" rx="4" fill="#00E4BB" fillOpacity="0.2" className="icon-bg"/>
+           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#00E4BB" fontSize="10" fontWeight="bold" className="icon-text">Au</text>
         </svg>
       ),
       capcut: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          {/* Logo CapCut Akurat: Dua bentuk yang bertemu di tengah */}
-          <path d="M7 6H17L12 11L7 6Z" fill="white" />
-          <path d="M7 18H17L12 13L7 18Z" fill="white" />
-          <path d="M6 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6"/>
-          <path d="M18 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6"/>
-          <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.1"/>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 6H17L12 11L7 6Z" fill="white" className="icon-path" />
+          <path d="M7 18H17L12 13L7 18Z" fill="white" className="icon-path" />
+          <path d="M6 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6" className="icon-stroke"/>
+          <path d="M18 6V18" stroke="white" strokeWidth="1" strokeLinecap="round" opacity="0.6" className="icon-stroke"/>
+          <rect width="24" height="24" rx="4" fill="white" fillOpacity="0.1" className="icon-bg"/>
         </svg>
       ),
       canva: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <circle cx="12" cy="12" r="12" fill="#00C4CC" fillOpacity="0.2"/>
-           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#00C4CC" fontSize="10" fontWeight="bold" style={{fontFamily: 'serif'}}>C</text>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <circle cx="12" cy="12" r="12" fill="#00C4CC" fillOpacity="0.2" className="icon-bg"/>
+           <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fill="#00C4CC" fontSize="10" fontWeight="bold" style={{fontFamily: 'serif'}} className="icon-text">C</text>
         </svg>
       ),
       ai: (
-        <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-           <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="url(#grad1)"/>
+        <svg viewBox="0 0 24 24" className="w-8 h-8 svg-icon" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M12 2L15 9L22 12L15 15L12 22L9 15L2 12L9 9L12 2Z" fill="url(#grad1)" className="icon-path-ai"/>
            <defs>
              <linearGradient id="grad1" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
                <stop stopColor="#FF0080"/>
@@ -89,7 +88,7 @@ const Portfolio = () => {
   return (
     <div className={`min-h-screen bg-black text-white font-sans selection:bg-purple-500 selection:text-white overflow-hidden relative transition-opacity duration-1000 ${mounted ? 'opacity-100' : 'opacity-0'}`}>
       
-      {/* BACKGROUND (Disembunyikan saat print agar hemat tinta dan bersih) */}
+      {/* BACKGROUND (Hilang saat print) */}
       <div className="fixed inset-0 z-0 no-print">
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600 rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob"></div>
         <div className="absolute top-[20%] right-[-10%] w-[400px] h-[400px] bg-blue-600 rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-blob animation-delay-2000"></div>
@@ -110,13 +109,13 @@ const Portfolio = () => {
         <header className="px-6 pt-4 pb-8 flex flex-col items-center text-center">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 no-print"></div>
-            <div className="relative w-28 h-28 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center overflow-hidden shadow-2xl">
+            <div className="relative w-28 h-28 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center overflow-hidden shadow-2xl print:border-gray-300 print:shadow-none">
               
               {/* GAMBAR PROFIL */}
               {imgError ? (
                 <div className="flex flex-col items-center justify-center h-full text-xs text-red-400 bg-black/50 p-2 text-center">
                   <AlertTriangle className="w-6 h-6 mb-1" />
-                  <span className="text-[8px] leading-tight">Foto tidak dapat dimuat</span>
+                  <span className="text-[8px] leading-tight">Foto Error</span>
                 </div>
               ) : (
                 <img 
@@ -128,24 +127,28 @@ const Portfolio = () => {
               )}
 
             </div>
-            {/* Indikator Online (Sembunyikan saat print) */}
-            <div className="absolute bottom-0 right-1 w-8 h-8 bg-green-500 rounded-full border-4 border-black flex items-center justify-center no-print">
-               <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-            </div>
           </div>
 
-          <h1 className="mt-5 text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60">
+          <h1 className="mt-5 text-4xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-white to-white/60 print:text-black print:mt-2">
             Kevin Messah
           </h1>
-          <p className="mt-2 text-base text-purple-200 font-medium bg-purple-900/30 px-3 py-1 rounded-full border border-purple-500/30 no-print-bg">
+          <p className="mt-2 text-base text-purple-200 font-medium bg-purple-900/30 px-3 py-1 rounded-full border border-purple-500/30 print:text-black print:bg-transparent print:border-none print:px-0">
             {profile.role}
           </p>
-          <div className="mt-3 flex items-center text-white/60 text-sm">
+          <div className="mt-3 flex items-center text-white/60 text-sm print:text-black">
             <MapPin className="w-3 h-3 mr-1" /> {profile.location}
+          </div>
+          
+          {/* KONTAK INFO KHUSUS PRINT */}
+          {/* Ini hanya muncul saat diprint, menggantikan tombol interaktif */}
+          <div className="hidden print-block mt-4 text-sm text-black border-t border-b border-gray-300 py-2 w-full">
+            <p className="font-semibold">Contact & Portfolio:</p>
+            <p>WA: {profile.phone} | Email: {profile.email}</p>
+            <p className="text-xs mt-1 text-gray-600">{profile.portfolioLink}</p>
           </div>
         </header>
 
-        {/* BUTTONS (Sembunyikan saat print agar bersih) */}
+        {/* BUTTONS (Disembunyikan saat print) */}
         <div className="flex flex-wrap justify-center gap-4 px-6 mb-8 no-print">
           <a href={`https://wa.me/${profile.phone}`} target="_blank" rel="noreferrer" className="flex flex-col items-center gap-2 group cursor-pointer w-20">
             <div className="w-14 h-14 rounded-2xl bg-green-500/20 backdrop-blur-xl border border-green-500/30 flex items-center justify-center text-green-400 group-hover:bg-green-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-green-500/50">
@@ -175,7 +178,7 @@ const Portfolio = () => {
              <span className="text-[10px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400 tracking-wide text-center leading-3 pt-1">WHAT I CREATE</span>
           </a>
 
-          {/* TOMBOL DOWNLOAD PDF BARU */}
+          {/* TOMBOL DOWNLOAD PDF */}
           <div onClick={handleDownloadPDF} className="flex flex-col items-center gap-2 group cursor-pointer w-20">
             <div className="w-14 h-14 rounded-2xl bg-orange-500/20 backdrop-blur-xl border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300 shadow-lg group-hover:shadow-orange-500/50">
               <Download className="w-6 h-6" />
@@ -185,10 +188,10 @@ const Portfolio = () => {
         </div>
 
         {/* CONTENT */}
-        <div className="space-y-6 px-4 flex-grow print:px-0">
+        <div className="space-y-6 px-4 flex-grow print:px-0 print:space-y-4">
           {/* ABOUT ME */}
-          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0">
-            <h2 className="text-xl font-bold mb-3 flex items-center text-white/90 print:text-black">
+          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0 print:border-b print:border-gray-200">
+            <h2 className="text-xl font-bold mb-3 flex items-center text-white/90 print:text-black print:mb-1">
               <User className="w-5 h-5 mr-2 text-blue-400 print:text-black" /> ABOUT ME
             </h2>
             <p className="text-base leading-relaxed text-white/70 font-light text-left md:text-justify hyphens-none print:text-black">
@@ -197,39 +200,43 @@ const Portfolio = () => {
           </section>
 
           {/* EXPERIENCE */}
-          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0">
-            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black">
+          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0 print:border-b print:border-gray-200">
+            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black print:mb-2">
               <Briefcase className="w-5 h-5 mr-2 text-green-400 print:text-black" /> EXPERIENCE
             </h2>
-            <div className="space-y-8 relative">
-              <div className="absolute left-1.5 top-2 bottom-2 w-0.5 bg-white/10 rounded-full print:bg-black/20"></div>
-              <div className="pl-6 relative">
-                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-black/50 box-content print:border-black/10"></div>
+            <div className="space-y-8 relative print:space-y-4">
+              <div className="absolute left-1.5 top-2 bottom-2 w-0.5 bg-white/10 rounded-full print:hidden"></div>
+              
+              <div className="pl-6 relative print:pl-0">
+                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-green-500 rounded-full border-4 border-black/50 box-content print:hidden"></div>
                  <h3 className="font-semibold text-white text-base print:text-black">Freelance Multimedia Creative | Self-Employed</h3>
-                 <span className="text-sm text-green-400 block mb-2 print:text-black/60">2022 – Sekarang</span>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black">
+                 <span className="text-sm text-green-400 block mb-2 print:text-gray-600">2022 – Sekarang</span>
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black print:marker:text-black">
                    <li>Menangani berbagai proyek fotografi dokumentasi acara (Wedding, Gathering, Event Musik) untuk klien UMKM dan personal.</li>
                    <li>Bertanggung jawab penuh atas seluruh proses produksi, mulai dari pengambilan gambar (Camera Operation) hingga pasca produksi (Editing & Color Grading).</li>
                    <li>Memproduksi konten video pendek vertikal (TikTok/Reels) yang engaging menggunakan Adobe Premiere dan CapCut, serta memanfaatkan AI Tools untuk mempercepat alur kerja kreatif.</li>
                    <li>Mendesain materi promosi digital yang relevan dengan tren pasar saat ini.</li>
                  </ul>
               </div>
-               <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest mt-6 pl-6 print:text-black/40">PENGALAMAN ORGANISASI</h3>
-               <div className="pl-6 relative mt-4">
-                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content print:border-black/10"></div>
+               
+               <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest mt-6 pl-6 print:pl-0 print:text-gray-500 print:mt-4">PENGALAMAN ORGANISASI</h3>
+               
+               <div className="pl-6 relative mt-4 print:pl-0 print:mt-2">
+                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content print:hidden"></div>
                  <h3 className="font-semibold text-white text-base print:text-black">Multimedia & Live Production Team</h3>
-                 <span className="text-sm text-purple-400 block mb-2 print:text-black/60">2020 – Sekarang</span>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black">
+                 <span className="text-sm text-purple-400 block mb-2 print:text-gray-600">2020 – Sekarang</span>
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black print:marker:text-black">
                    <li>Bertanggung jawab sebagai operator multimedia mingguan untuk memastikan kelancaran visual ibadah Gereja (On-site & Live Streaming).</li>
                    <li>Bekerja sama secara intensif dalam tim untuk sinkronisasi visual, audio, dan pencahayaan acara.</li>
                    <li>Terlatih untuk tetap fokus dan mengambil keputusan cepat dalam situasi live event.</li>
                    <li>Memiliki rekam jejak aktif dalam berbagai kepanitiaan gereja, di mana saya berulang kali dipercaya sebagai Koordinator Divisi Publikasi dan Dokumentasi. Peran ini menuntut tanggung jawab penuh atas pengelolaan dokumentasi visual (kamera) dan produksi desain grafis untuk kebutuhan publikasi.</li>
                  </ul>
               </div>
-               <div className="pl-6 relative">
-                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content print:border-black/10"></div>
+               
+               <div className="pl-6 relative print:pl-0">
+                 <div className="absolute left-0 top-1.5 w-3.5 h-3.5 bg-purple-500 rounded-full border-4 border-black/50 box-content print:hidden"></div>
                  <h3 className="font-semibold text-white text-base print:text-black">Staf Publikasi & Dokumentasi (Pubdok)</h3>
-                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 mt-2 text-justify hyphens-none print:text-black">
+                 <ul className="text-sm text-white/70 space-y-2 list-disc pl-3 marker:text-white/30 mt-2 text-justify hyphens-none print:text-black print:marker:text-black">
                    <li>Mengelola dokumentasi foto dan video untuk berbagai kegiatan organisasi.</li>
                    <li>Membuat desain poster, banner, dan konten media sosial untuk kebutuhan publikasi acara.</li>
                    <li>Menyelesaikan video highlight acara (After-movie) dengan tenggat waktu yang ketat.</li>
@@ -239,42 +246,42 @@ const Portfolio = () => {
           </section>
 
           {/* EDUCATION */}
-          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0">
-            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black">
+          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl print:bg-transparent print:border-0 print:shadow-none print:p-0 print:border-b print:border-gray-200">
+            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black print:mb-2">
               <GraduationCap className="w-5 h-5 mr-2 text-pink-400 print:text-black" /> PENDIDIKAN
             </h2>
-             <div className="space-y-4">
-               <div className="p-4 bg-white/5 rounded-2xl border border-white/5 print:border-black/10">
+             <div className="space-y-4 print:space-y-2">
+               <div className="p-4 bg-white/5 rounded-2xl border border-white/5 print:bg-transparent print:border-0 print:p-0">
                  <h3 className="text-base font-semibold text-white print:text-black">Institut Desain dan Bisnis Bali (IDB Bali)</h3>
-                 <p className="text-sm text-pink-300 font-medium mt-1 print:text-black/60">S1 Desain Komunikasi Visual (DKV) | 2019 – 2022</p>
-                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black">
+                 <p className="text-sm text-pink-300 font-medium mt-1 print:text-gray-600">S1 Desain Komunikasi Visual (DKV) | 2019 – 2022</p>
+                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black print:marker:text-black">
                     <li>Menyelesaikan 5 Semester dengan fokus studi pada Fotografi, Videografi, Nirmana, dan Komunikasi Visual.</li>
                     <li>Memilih jalur mandiri untuk lebih leluasa bereksperimen dan mengembangkan kemampuan teknis di bidang multimedia melalui berbagai proyek kreatif.</li>
                  </ul>
                </div>
-               <div className="p-4 bg-white/5 rounded-2xl border border-white/5 print:border-black/10">
+               <div className="p-4 bg-white/5 rounded-2xl border border-white/5 print:bg-transparent print:border-0 print:p-0">
                  <h3 className="text-base font-semibold text-white print:text-black">SMK Wira Harapan</h3>
-                 <p className="text-sm text-pink-300 font-medium mt-1 print:text-black/60">Jurusan Multimedia | 2016 – 2019</p>
-                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black">
+                 <p className="text-sm text-pink-300 font-medium mt-1 print:text-gray-600">Jurusan Multimedia | 2016 – 2019</p>
+                 <ul className="mt-3 text-sm text-white/60 space-y-1 list-disc pl-3 marker:text-white/30 text-left md:text-justify hyphens-none print:text-black print:marker:text-black">
                     <li>Lulus dengan kompetensi teknis yang kuat di bidang pengoperasian kamera, editing video, dan desain grafis dasar.</li>
                  </ul>
                </div>
              </div>
           </section>
 
-          {/* SKILLS - Responsive Grid */}
-          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl mb-6 print:bg-transparent print:border-0 print:shadow-none print:p-0">
-            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black">
+          {/* SKILLS */}
+          <section className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 shadow-2xl mb-6 print:bg-transparent print:border-0 print:shadow-none print:p-0 print:border-b print:border-gray-200">
+            <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black print:mb-2">
               <Award className="w-5 h-5 mr-2 text-orange-400 print:text-black" /> KEAHLIAN (SKILLS)
             </h2>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-sm text-white/80 print:text-black">
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Desain Grafis</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Desain untuk media sosial</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Desain cetak</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Banner/poster/flyer</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Editing video</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Kemampuan memanfaatkan generative AI</li>
-                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0"></div>Mengoperasikan kamera</li>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 text-sm text-white/80 print:text-black print:gap-y-1">
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Desain Grafis</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Desain untuk media sosial</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Desain cetak</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Banner/poster/flyer</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Editing video</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Kemampuan memanfaatkan generative AI</li>
+                <li className="flex items-start"><div className="w-1.5 h-1.5 bg-orange-400 rounded-full mr-2 mt-2 flex-shrink-0 print:bg-black"></div>Mengoperasikan kamera</li>
             </ul>
           </section>
           
@@ -284,24 +291,24 @@ const Portfolio = () => {
              <h2 className="text-xl font-bold mb-4 flex items-center text-white/90 print:text-black">
                <Layers className="w-5 h-5 mr-2 text-yellow-400 print:text-black" /> Software & Tools
              </h2>
-             <div className="grid grid-cols-3 gap-4 print:grid-cols-5">
-               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:border-black/10">
+             <div className="grid grid-cols-3 gap-4 print:grid-cols-5 print:gap-2">
+               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:bg-transparent print:border-0 print:p-0">
                   <SoftLogo type="premiere" />
                   <span className="text-xs text-white/70 text-center print:text-black">Premiere Pro</span>
                </div>
-               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:border-black/10">
+               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:bg-transparent print:border-0 print:p-0">
                   <SoftLogo type="capcut" />
                   <span className="text-xs text-white/70 text-center print:text-black">CapCut</span>
                </div>
-               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:border-black/10">
+               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:bg-transparent print:border-0 print:p-0">
                   <SoftLogo type="photoshop" />
                   <span className="text-xs text-white/70 text-center print:text-black">Photoshop</span>
                </div>
-                <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:border-black/10">
+                <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:bg-transparent print:border-0 print:p-0">
                   <SoftLogo type="canva" />
                   <span className="text-xs text-white/70 text-center print:text-black">Canva</span>
                </div>
-               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:border-black/10">
+               <div className="flex flex-col items-center gap-2 p-3 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors print:bg-transparent print:border-0 print:p-0">
                   <SoftLogo type="audition" />
                   <span className="text-xs text-white/70 text-center print:text-black">Audition</span>
                </div>
@@ -349,33 +356,70 @@ const Portfolio = () => {
         .animation-delay-2000 { animation-delay: 2s; }
         .animation-delay-4000 { animation-delay: 4s; }
         
-        /* GAYA KHUSUS SAAT PRINT (SAVE PDF) */
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { display: none; }
+
+        /* GAYA KHUSUS SAAT PRINT (PUTIH BERSIH) */
         @media print {
-          .no-print { display: none !important; }
+          @page {
+            margin: 1.5cm;
+            size: auto;
+          }
+          
+          /* 1. Latar Belakang & Warna Dasar */
           body, .min-h-screen { 
             background: white !important; 
             color: black !important;
             height: auto !important;
             overflow: visible !important;
           }
-          /* Matikan efek kaca buram saat print agar teks tajam */
-          .backdrop-blur-xl, .backdrop-blur-2xl, .backdrop-blur-md {
+
+          /* 2. Sembunyikan Element Tidak Perlu */
+          .no-print { display: none !important; }
+          .print-hidden { display: none !important; }
+
+          /* 3. Tampilkan Kontak Info */
+          .print-block { display: block !important; }
+
+          /* 4. Reset Efek Kaca (Glass) agar jadi bersih */
+          .bg-white\\/5, .backdrop-blur-xl, .backdrop-blur-2xl, .backdrop-blur-md {
             backdrop-filter: none !important;
             background: transparent !important;
-            border: none !important;
             box-shadow: none !important;
+            border: none !important;
           }
-          /* Pastikan teks putih jadi hitam */
-          .text-white, .text-white\/70, .text-white\/60, .text-white\/90, .text-white\/50, .text-white\/30, .text-purple-200 {
-            color: black !important;
+
+          /* 5. Ubah Semua Teks Menjadi Hitam/Gelap */
+          .text-white, .text-white\\/70, .text-white\\/90, .text-white\\/60, .text-purple-200 {
+            color: #222 !important;
+            text-shadow: none !important;
           }
-          /* Pastikan warna-warna ikon tetap bagus atau jadi hitam */
+          .text-white\\/30 { color: #666 !important; }
+
+          /* 6. Atur Warna Icon & Judul Bagian */
           .text-green-400, .text-blue-400, .text-purple-400, .text-pink-400, .text-orange-400, .text-yellow-400 {
-            color: black !important;
+            color: #000 !important;
             font-weight: bold !important;
           }
-          /* Sembunyikan scrollbar */
-          ::-webkit-scrollbar { display: none; }
+
+          /* 7. Perbaiki Icon Software agar terlihat di background putih */
+          .icon-bg { fill: #eee !important; fill-opacity: 1 !important; }
+          .icon-text { fill: #000 !important; }
+          .icon-path { fill: #000 !important; }
+          .icon-stroke { stroke: #000 !important; }
+          .icon-path-ai { fill: #000 !important; }
+          
+          /* Force SVG icons to be dark */
+          .svg-icon rect[fill^="#"], .svg-icon path[fill^="url"] {
+             fill: #ddd !important; /* Lighter gray background for icons */
+             fill-opacity: 1 !important;
+          }
+          .svg-icon text, .svg-icon path[fill="white"] {
+             fill: black !important;
+          }
+          .svg-icon path[stroke="white"] {
+             stroke: black !important;
+          }
         }
       `}</style>
     </div>
